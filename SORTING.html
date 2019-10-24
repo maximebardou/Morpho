@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f0f0f0;
+  padding: 20px;
+  font-family: "Avenir";
+  color: #3b497d;
+}
+
+/* Center website */
+.main {
+  max-width: 1000px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 50px;
+  word-break: break-all;
+}
+
+.row {
+  margin: 10px -16px;#3b497d
+}
+
+/* Add padding BETWEEN each column */
+.row,
+.row > .column {
+  padding: 8px;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 20%;
+  display: none; /* Hide all elements by default */
+}
+
+/* Clear floats after rows */ 
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.content {
+  background-color: white;
+  padding: 10px;
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 5px 16px;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  color: #3b497d;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #f8f8f8;
+  color: #3b497d;
+}
+  
+  
+  
+  
+</style>
+</head>
+<body>
+
+<!-- MAIN (Center website) -->
+<div class="main">
+<hr>
+
+<h3>Morphologie des villages et hameaux caussenards</h3>
+  <h6><p style="color:#ff8c7a;">Une typologie exhaustive des occupations humaines sur le Causse Méjean</p></h6>
+
+<div id="myBtnContainer"><h5>Organisation spatiale :
+  <button class="btn" onclick="filterSelection('a')">Repose sur la pente</button>|
+  <button class="btn" onclick="filterSelection('b')">Regroupé</button>|
+  <button class="btn" onclick="filterSelection('c')">Longe un axe routier</button>|
+  <button class="btn" onclick="filterSelection('d')">Éclaté</button></h5>
+
+<div id="myBtnContainer"><h5>Surface habitée :
+  <button class="btn" onclick="filterSelection('1')">inférieure à 1000 m2</button>|
+  <button class="btn" onclick="filterSelection('2')">comprise entre 1000 et 2500 m2</button>|
+  <button class="btn" onclick="filterSelection('3')">comprise entre 2500 et 5000 m2</button>|
+  <button class="btn" onclick="filterSelection('4')">supérieure à 5000 m2</button></h5>
+
+<div id="myBtnContainer"><h5>Position : 
+  <button class="btn" onclick="filterSelection('ex')">sur la crête</button>|
+  <button class="btn" onclick="filterSelection('in')">dans les terres</button></h5>
+
+<div id="myBtnContainer">
+  <button class="btn active" onclick="filterSelection('all')">Toutes les catégories</button>
+</div>
+  
+  
+  
+  
+  
+<!-- Portfolio Gallery Grid -->
+    <div class="row">
+      <div class="column a 3 in">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/1.png" style="width:100%">
+        </div>
+      </div>
+      <div class="column a 1 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/2.png" style="width:100%">
+        </div>
+      </div>
+      <div class="column b 2 in">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/3.png" style="width:100%">
+        </div>
+      </div>
+      <div class="column b 1 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/4.png" style="width:100%">
+        </div>
+      </div>
+      <div class="column c 3 in">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/5.png" style="width:100%">
+        </div>
+      </div>
+      <div class="column d 2 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/6.png" style="width:100%">
+        </div>
+      </div>
+      <div class="column d 3 in">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/7.png" style="width:100%">
+        </div>
+      </div>
+      <div class="column d 1 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/8.png" style="width:100%">
+        </div>
+      </div>
+      <div class="column d 1 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/9.png" style="width:100%">
+        </div>
+      </div>
+      <div class="column d 1 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/10.png" style="width:100%">
+        </div>
+      </div>
+      <div class="column d 2 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/11.png" style="width:100%">
+        </div>
+      </div>
+      <div class="column d 1 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/12.png" style="width:100%">
+        </div>
+      </div>
+      <div class="column d 2 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/13.png" style="width:100%">
+        </div>
+      </div>
+      <div class="column d 2 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/14.png" style="width:100%">
+        </div>
+      </div>
+      <div class="column d 2 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/15.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 1 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/16.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 4 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/17.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 2 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/18.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 1 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/19.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 2 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/20.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 2 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/21.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 2 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/22.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 4 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/23.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 2 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/24.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 2 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/25.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 1 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/26.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 1 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/27.png" style="width:100%">
+        </div> 
+      </div><div class="column d 1 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/28.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 1 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/29.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 1 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/30.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 1 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/31.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 1 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/32.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 4 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/33.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 3 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/34.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 3 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/35.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 3 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/36.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 1 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/37.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 1 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/38.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 3 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/39.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 2 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/40.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 3 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/41.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 2 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/42.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 1 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/43.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 2 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/44.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 2 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/45.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 2 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/46.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 1 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/47.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 2 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/48.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 1 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/49.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 1 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/50.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 2 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/51.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 1 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/52.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 2 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/53.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 2 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/54.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 1 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/55.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 4 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/56.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 2 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/57.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 1 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/58.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 4 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/59.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 2 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/60.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 3 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/61.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 1 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/62.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 2 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/63.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 2 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/64.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 3 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/65.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 2 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/66.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 2 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/67.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 2 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/68.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 1 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/69.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 1 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/70.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 1 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/71.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 2 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/72.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 2 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/73.png" style="width:100%">
+        </div> 
+      </div>
+      <div class="column d 1 ex">
+        <div class="content">
+          <img src="https://raw.githubusercontent.com/maximebardou/VILLAGES/master/74.png" style="width:100%">
+        </div> 
+      </div>
+  
+<!-- END GRID -->
+</div>
+
+<!-- END MAIN -->
+</div>
+
+<script>
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("column");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+
+</body>
+</html>
